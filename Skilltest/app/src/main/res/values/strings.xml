@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Skill test</string>
+    <string name="user_avatar">User avatar</string>
+    <string name="example_name">John Doe</string>
+    <string name="example_url">http://api.page.com/</string>
+    <string name="load_error_message">Nie udało się pobrać danych</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.details.UserDetailsActivity">
+
+    <data>
+
+        <import type="com.example.skilltest.data.User" />
+
+        <variable
+            name="viewModel"
+            type="com.example.skilltest.ui.details.UserDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/small_padding">
+
+        <ImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="@dimen/large_avatar_size"
+            android:layout_height="@dimen/large_avatar_size"
+            android:contentDescription="@string/user_avatar"
+            android:padding="@dimen/large_avatar_padding"
+            app:imageFromUrl="@{viewModel.user.avatarUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/user_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:paddingBottom="@dimen/large_padding"
+            android:text="@{viewModel.user.userName}"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/large_name_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_avatar"
+            tools:text="@string/example_name" />
+
+        <TextView
+            android:id="@+id/source_url_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/large_padding"
+            android:text="@{viewModel.user.sourceUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_name_text"
+            tools:text="@string/example_url" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
